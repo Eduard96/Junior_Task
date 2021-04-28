@@ -8,20 +8,20 @@ import java.util.Set;
 
 public class UserDTO {
 
-    @NotBlank(message = "Password is not strong enough")
-    @Size(min = 3, max = 20)
+    @NotBlank
+    @Size(min = 3, max = 20, message = "Firstname too short")
     private String firstName;
 
     @NotBlank
-    @Size(min = 3, max = 20, message = "Password is not strong enough")
+    @Size(min = 3, max = 20, message = "Lastname too short")
     private String lastName;
 
     @NotBlank
-    @Size(min = 3, max = 20)
+    @Size(min = 3, max = 20, message = "Username too short")
     private String userName;
 
     @NotBlank
-    @Size(min = 8, max = 20, message = "Password is not strong enough")
+    @Size(min = 8, max = 20)
     @ValidPassword(message = "Password is not strong enough")
     private String password;
 
@@ -68,4 +68,15 @@ public class UserDTO {
     public void setRoles(Set<String> roles) {
         this.roles = roles;
     }
+
+//    @Override
+//    public String toString() {
+//        return "{" +
+//                " \"firstName\":\"" + firstName + '\"' +
+//                ", \"lastName\":\"" + lastName + '\"' +
+//                ", \"userName\":\"" + userName + '\"' +
+//                ", \"password\":\"" + password + '\"' +
+//                ", \"roles\":[" + "\"user\"" +
+//                "]}";
+//    }
 }

@@ -12,7 +12,7 @@ public class Role {
     private Integer id;
 
     @Enumerated(EnumType.STRING)
-    @Column(length = 15, columnDefinition = "varchar(255) default 'ROLE_USER'")
+    @Column(length = 15)
     private RoleEnum name;
 
     public Role() {
